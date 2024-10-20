@@ -3,4 +3,3 @@ class AddImageToCustomers < ActiveRecord::Migration[7.2]
     add_attachment :customers, :image
   end
 end
-

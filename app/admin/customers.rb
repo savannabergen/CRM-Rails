@@ -7,15 +7,16 @@ ActiveAdmin.register Customer do
       f.input :phone
       f.input :email
       f.input :notes
-      f.input :image, as: :file
+      f.input :image
     end
     f.actions
   end
 
   show do
     attributes_table_for customer do
-      row :image
+      row :image do |customer|
+        image_tag(url_for(customer.image_thumbnail))
+      end
     end
   end
 end
-

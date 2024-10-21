@@ -10,6 +10,6 @@ class Customer < ApplicationRecord
   end
 
   def image_thumbnail
-    image.variant(resize_to_limit: [100, 100])
+    image.variant(resize_to_limit: [ 100, 100 ])
   end
 end

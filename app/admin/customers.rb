@@ -7,7 +7,7 @@ ActiveAdmin.register Customer do
       f.input :phone
       f.input :email
       f.input :notes
-      f.input :image
+      f.input :image, as: :file
     end
     f.actions
   end

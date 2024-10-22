@@ -3,4 +3,3 @@ class CustomersController < ApplicationController
     @customers = Customer.all
   end
 end
-

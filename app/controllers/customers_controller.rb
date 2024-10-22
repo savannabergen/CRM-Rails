@@ -12,6 +12,6 @@ class CustomersController < ApplicationController
   end
 
   def missing_email
-    @customers = Customer.where(email: [nil, ""]).page(params[:page])
+    @customers = Customer.where(email: [ nil, "" ]).page(params[:page])
   end
 end

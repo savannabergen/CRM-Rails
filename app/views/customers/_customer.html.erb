@@ -1,13 +1,13 @@
 <div class="card mb-4 col-lg-3 col-md-4 col-sm-6 mx-2 my-2">
-<% if customer.image.attached? %>
-<%= image_tag(customer.image_thumbnail, class: "card-img-top rounded-circle", style: "width: 100px; height: 100px;") %>
-<% else %>
-<%= image_tag("default_avatar.png", class: "card-img-top rounded-circle", style: "width: 100px; height: 100px;") %>
-<% end %>
-<div class="card-body">
-<h5 class="card-title"><%= customer.full_name %></h5>
-<p class="card-text"><%= customer.email %></p>
-<p class="card-text"><%= customer.phone %></p>
-<p class="card-text"><%= truncate(customer.notes, length: 100) %></p>
-</div>
+  <% if customer.image.attached? %>
+    <%= image_tag(customer.image_thumbnail, class: "card-img-top rounded-circle", style: "width: 100px; height: 100px;") %>
+  <% else %>
+    <%= image_tag("default_avatar.png", class: "card-img-top rounded-circle", style: "width: 100px; height: 100px;") %>
+  <% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= customer.full_name %></h5>
+    <p class="card-text"><%= customer.email %></p>
+    <p class="card-text"><%= customer.phone %></p>
+    <p class="card-text"><%= truncate(customer.notes, length: 100) %></p>
+  </div>
 </div>

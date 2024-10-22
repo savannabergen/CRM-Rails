@@ -1,1 +1,6 @@
-<h1>test 2</h1>
+<%= render partial: 'nav' %>
+<div class="row">
+  <%= render partial: 'customer', collection: @customers %>
+</div>
+
+<%= paginate @customers %>

@@ -1,4 +1,23 @@
-<%= form_tag(customers_path, method: 'get') do %>
-  <%= text_field_tag(:search, params[:search], class: "form-control me-2", placeholder: "Search Customers") %>
-  <%= submit_tag("Search", class: "btn btn-outline-success") %>
-  <% end %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-start">
+      <%= form_tag(customers_path, method: 'get', class: "d-flex") do %>
+      <%= text_field_tag(:search, params[:search], class: "form-control me-2", placeholder: "Search Customers") %>
+      <%= submit_tag("Search", class: "btn btn-outline-success") %>
+      <% end %>
+    </div>
+    <div class="d-flex justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Alphabetized", customers_alphabetized_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Missing Email", customers_missing_email_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

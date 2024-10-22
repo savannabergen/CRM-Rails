@@ -10,8 +10,14 @@ Rails.application.routes.draw do
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  get '/customers', to: 'customers#index'
-  get '/customers/search', to: 'customers#index'
+  # Initial Route
+  get "/customers", to: "customers#index"
+  # Search Route
+  get "/customers/search", to: "customers#index"
+  # Alphabetized Route
+  get "/customers/alphabetized", to: "customers#alphabetized"
+  # Missing Email Route
+  get "/customers/missing_email", to: "customers#missing_email"
 
   # Defines the root path route ("/")
   # root "posts#index"

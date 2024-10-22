@@ -1,3 +1,7 @@
-<li>
-  <%= customer.full_name %> (<%= customer.email %>)
-</li>
+<div class="card">
+<% if customer.image.attached? %>
+<%= image_tag(customer.image, size: "100x100", class: "card-img-top") %>
+<% else %>
+<%= image_tag("default_avatar.png", size: "100x100", class: "card-img-top") %>
+<% end %>
+</div>

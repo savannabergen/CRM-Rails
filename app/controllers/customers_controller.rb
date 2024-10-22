@@ -8,7 +8,7 @@ class CustomersController < ApplicationController
   end
 
   def alphabetized
-    @customers = Customer.order(:full_name).page(params[:page])
+    @customers = Customer.order("LOWER(full_name) ASC").page(params[:page])
   end
 
   def missing_email

@@ -1,18 +1,17 @@
 class CustomersController < ApplicationController
   def index
     if params[:search]
-      @customers = Customer.where("lower(full_name) LIKE ?", "%#{params[:search].downcase}%")
+      @customers = Customer.search(params[:search])
     else
       @customers = Customer.all
     end
   end
 
   def alphabetized
-    @customers = Customer.order(:full_name).paginate(page: params[:page], per_page: 10)
-    #@customers = Customer.paginate(page: params[:page], per_page: 10)
+    @customers = Customer.order(:full_name).page(params[:page])
   end
 
   def missing_email
-    @customers = Customer.where(email: [ nil, "" ]).paginate(page: params[:page], per_page: 10)
+    @customers = Customer.where(email: [nil, ""]).page(params[:page])
   end
 end

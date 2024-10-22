@@ -1,8 +1,4 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Customers</button>
-    </form>
-  </div>
-</nav>
+<%= form_tag(customers_path, method: 'get') do %>
+  <%= text_field_tag(:search, params[:search], class: "form-control me-2", placeholder: "Search Customers") %>
+  <%= submit_tag("Search", class: "btn btn-outline-success") %>
+  <% end %>
